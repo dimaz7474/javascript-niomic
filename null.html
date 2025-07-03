@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Null & Undefined JavaScript</title>
+</head>
+<body>
+
+<h2>Contoh Null dan Undefined</h2>
+
+<button onclick="cekNilai()">Cek Nilai</button>
+<p id="output"></p>
+
+<script>
+  function cekNilai() {
+    var nilaiUndefined; // belum diisi
+    var nilaiNull = null; // dikosongkan secara eksplisit
+
+    var output = "";
+    output += "nilaiUndefined: " + nilaiUndefined + "<br>";
+    output += "nilaiNull: " + nilaiNull + "<br>";
+
+    // Cek kondisi
+    if (nilaiUndefined === undefined) {
+      output += "✅ nilaiUndefined belum diinisialisasi (undefined)<br>";
+    }
+
+    if (nilaiNull === null) {
+      output += "✅ nilaiNull sengaja diatur null<br>";
+    }
+
+    document.getElementById("output").innerHTML = output;
+  }
+</script>
+
+</body>
+</html>

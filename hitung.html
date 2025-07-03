@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Perhitungan Angka</title>
+</head>
+<body>
+
+<h2>Perhitungan Dua Angka</h2>
+
+<input type="number" id="angka1" placeholder="Masukkan angka pertama">
+<input type="number" id="angka2" placeholder="Masukkan angka kedua">
+<br><br>
+<button onclick="hitung()">Hitung</button>
+
+<h3>Hasil:</h3>
+<p id="output"></p>
+
+<script>
+  function hitung() {
+    // Ambil nilai dari input dan konversi ke number
+    var angka1 = Number(document.getElementById("angka1").value);
+    var angka2 = Number(document.getElementById("angka2").value);
+
+    // Lakukan perhitungan
+    var jumlah = angka1 + angka2;
+    var kurang = angka1 - angka2;
+    var kali   = angka1 * angka2;
+    var bagi   = angka2 !== 0 ? (angka1 / angka2).toFixed(2) : "Tidak bisa dibagi nol";
+
+    // Tampilkan hasil
+    var output = `
+      Penjumlahan: ${jumlah}<br>
+      Pengurangan: ${kurang}<br>
+      Perkalian: ${kali}<br>
+      Pembagian: ${bagi}
+    `;
+    document.getElementById("output").innerHTML = output;
+  }
+</script>
+
+</body>
+</html>
