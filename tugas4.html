@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Urutkan Tinggi Siswa</title>
+</head>
+<body>
+
+  <h2>Masukkan Tinggi Badan Tiga Siswa (dalam cm)</h2>
+
+  <label>Tinggi Siswa A:</label><br>
+  <input type="number" id="tinggiA" placeholder="Contoh: 170"><br><br>
+
+  <label>Tinggi Siswa B:</label><br>
+  <input type="number" id="tinggiB" placeholder="Contoh: 165"><br><br>
+
+  <label>Tinggi Siswa C:</label><br>
+  <input type="number" id="tinggiC" placeholder="Contoh: 180"><br><br>
+
+  <button onclick="urutkanTinggi()">Tampilkan Urutan</button>
+
+  <h3>Hasil:</h3>
+  <p id="outputHasil"></p>
+
+  <script>
+    function urutkanTinggi() {
+      let a = parseInt(document.getElementById("tinggiA").value);
+      let b = parseInt(document.getElementById("tinggiB").value);
+      let c = parseInt(document.getElementById("tinggiC").value);
+
+      let tinggi1, tinggi2, tinggi3;
+
+      if (a >= b && a >= c) {
+        tinggi1 = a;
+        if (b >= c) {
+          tinggi2 = b;
+          tinggi3 = c;
+        } else {
+          tinggi2 = c;
+          tinggi3 = b;
+        }
+      } else if (b >= a && b >= c) {
+        tinggi1 = b;
+        if (a >= c) {
+          tinggi2 = a;
+          tinggi3 = c;
+        } else {
+          tinggi2 = c;
+          tinggi3 = a;
+        }
+      } else {
+        tinggi1 = c;
+        if (a >= b) {
+          tinggi2 = a;
+          tinggi3 = b;
+        } else {
+          tinggi2 = b;
+          tinggi3 = a;
+        }
+      }
+
+      document.getElementById("outputHasil").innerHTML =
+        `1. ${tinggi1} cm<br>2. ${tinggi2} cm<br>3. ${tinggi3} cm`;
+    }
+  </script>
+
+</body>
+</html>
