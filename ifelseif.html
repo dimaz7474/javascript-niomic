@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Cek Nilai Ujian</title>
+</head>
+<body>
+
+  <h2>Cek Grade Nilai Ujian</h2>
+  <input type="number" id="nilaiInput" placeholder="Masukkan nilai (0 - 100)">
+  <button onclick="cekGrade()">Cek</button>
+
+  <p id="hasilGrade"></p>
+
+  <script>
+    function cekGrade() {
+      let nilai = document.getElementById("nilaiInput").value;
+      let hasil = "";
+
+      if (nilai >= 90) {
+        hasil = "Grade A (Sangat Baik) " + "nilai :" + nilai;
+      } else if (nilai >= 80) {
+        hasil = "Grade B (Baik) " + "nilai :"+ nilai;
+      } else if (nilai >= 70) {
+        hasil = "Grade C (Cukup) " + "nilai :"+ nilai;
+      } else if (nilai >= 60) {
+        hasil = "Grade D (Kurang) " + "nilai :"+ nilai;
+      } else if (nilai >= 0) {
+        hasil = "Grade E (Sangat Kurang) " + "nilai :"+ nilai;
+      } else {
+        hasil = "Nilai tidak valid!";
+      }
+
+      document.getElementById("hasilGrade").innerText = hasil;
+    }
+  </script>
+
+</body>
+</html>

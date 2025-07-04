@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Cek Kelulusan Siswa</title>
+</head>
+<body>
+
+  <h2>Form Cek Kelulusan Siswa</h2>
+
+  <label>Nilai Ujian:</label><br>
+  <input type="number" id="nilaiInput" placeholder="Contoh: 75" max=100><br><br>
+
+  <label>Jumlah Kehadiran (maksimal 12):</label><br>
+  <input type="number" id="hadirInput" placeholder="Contoh: 10" min=1 max=12><br><br>
+
+  <button onclick="cekKelulusan()">Cek Kelulusan</button>
+
+  <p id="outputHasil"></p>
+
+  <script>
+    function cekKelulusan() {
+      const nilai = parseInt(document.getElementById("nilaiInput").value);
+      const hadir = parseInt(document.getElementById("hadirInput").value);
+      const totalPertemuan = 12;
+
+      let hasil = "";
+
+     if (isNaN(nilai) || isNaN(hadir)) {
+  hasil = "Harap isi semua kolom dengan benar.";
+} else if (hadir < 1 || hadir > totalPertemuan) {
+  hasil = "Jumlah kehadiran harus antara 1 sampai 12.";
+} else if (nilai >= 75) {
+  if (hadir >= 10) {
+    hasil = "✅ Lulus - Nilai dan kehadiran memenuhi syarat.";
+  } else {
+    hasil = "❌ Tidak Lulus - Kehadiran kurang.";
+  }
+} else {
+  hasil = "❌ Tidak Lulus - Nilai kurang.";
+}
+
+      document.getElementById("outputHasil").innerText = hasil;
+    }
+  </script>
+
+</body>
+</html>

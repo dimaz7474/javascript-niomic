@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Contoh If Else di JavaScript</title>
+</head>
+<body>
+
+  <h1>Cek Bilangan Genap atau Ganjil</h1>
+
+  <input type="number" id="angkaInput" placeholder="Masukkan angka">
+  <button onclick="cekAngka()">Cek</button>
+
+  <p id="hasilOutput"></p>
+
+  <script>
+    function cekAngka() {
+      var angka = document.getElementById("angkaInput").value;
+      var output = document.getElementById("hasilOutput");
+
+      if (angka % 2 === 1) {
+        output.innerText = angka + " adalah bilangan GANJIL.";
+      } else {
+        output.innerText = angka + " adalah bilangan GENAP.";
+      }
+    }
+  </script>
+
+</body>
+</html>
